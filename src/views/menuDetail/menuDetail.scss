@@ -1,0 +1,61 @@
+.menu{
+  padding-left: 186px;
+  padding-top: 149px;
+  background-image: url('../../assets/image/bg_menu.png');
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: 627px 1024px;
+  margin-bottom: 120px;
+  
+  .content{
+    display: flex;
+    justify-content: left;
+    .title{
+      width: 348px;
+      :nth-child(3){
+        font-family: PingFangSC-Light, PingFang SC;
+        color: $color-text-grey;
+        line-height: 26px;
+      }
+      :nth-child(5){
+        font-family: $font-1;
+        color: $color-text-blue;
+        line-height: 26px;
+      }
+    }
+    .card{
+      width: 328px;
+      height: 310px;
+      background: $color-10;
+      border-radius: 24px;
+      padding: 25px 24px;
+      text-align: center;
+      .card-img{
+        font-size: 65px;
+        width: 65px;
+      }
+      .card-title{
+        font-size: 44px;
+        font-family: $font-2;
+        color: $color-text-blue;
+        line-height: 53px;
+
+      }
+      .card-sub-title{
+        font-family: $font-3;
+        color: $color-text-grey-1;
+        line-height: 23px;
+      }
+      .btn-box{
+        display: flex;
+        button{
+          margin-left: 0;
+        }
+        button:nth-child(3){
+          width: 70px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

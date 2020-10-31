@@ -1,0 +1,14 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -$height-between-header-and-container;
+  padding: 160px 0;
+  background-color: $color-13;
+
+  :global(.el-button) {
+    width: 160px;
+    margin-top: 60px;
+  }
+}

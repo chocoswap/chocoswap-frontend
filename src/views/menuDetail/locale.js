@@ -1,0 +1,26 @@
+export default {
+  en: {
+    10: '🦄 UNI Unicorn',
+    20: 'Deposit',
+    30: 'Tokens and earn VNLA',
+    40: 'Every time you stake and unstake LP tokens, the contract will automagically harvest VNLA rewards for you!',
+    50: 'Info',
+    60: 'Earned',
+    70: 'Havest',
+    80: 'Tokens Staked',
+    90: 'Approve',
+    100: 'Unstake',
+  },
+  zh: {
+    10: '🦄 UNI Unicorn',
+    20: '质押',
+    30: '通证，然后获取 VNLA',
+    40: '每次质押和解除质押LP通证时，智能合约将自动发放YFO奖励。',
+    50: '信息',
+    60: '收益',
+    70: '收取',
+    80: '质押中',
+    90: '许可',
+    100: '解押',
+  },
+}

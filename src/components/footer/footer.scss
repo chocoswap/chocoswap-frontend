@@ -1,0 +1,46 @@
+.footer{
+  padding: 0 0 0 188px;
+  position: relative;
+  .contactus{
+    display: flex;
+    align-items: center;
+    color: $color-text-grey;
+    a{
+      margin-left: 36px;
+    }
+    img{
+      width: 16px;
+    }
+    :nth-child(2){
+      img{
+        width: 20px;
+      }
+    }
+    :nth-child(5){
+      img{
+        width: 20px;
+      }
+    }
+    :nth-child(6){
+      img{
+        width: 20px;
+      }
+    }
+    :nth-child(7){
+      img{
+        width: 20px;
+      }
+    }
+    :nth-child(3){
+      img{
+        width: 18px;
+      }
+    }
+  }
+  .decorate{
+    position: absolute;
+    left: 0px;
+    bottom: 4px;
+    width: 80px;
+  }
+}

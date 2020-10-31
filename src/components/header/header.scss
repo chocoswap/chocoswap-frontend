@@ -1,0 +1,30 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: $width-base;
+  padding: 12px 30px;
+  margin: 0 auto;
+  img{
+    height: 48px;
+  }
+  .menu{
+    display: flex;
+    a{
+      padding: 10px 28px;
+      color: $color-text;
+      &:hover{
+        color: $color-text-blue;
+      }
+    }
+    .router-link-exact-active{
+      color: $color-text-blue;
+    }
+  }
+  .wallet{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+  }
+}

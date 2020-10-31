@@ -1,0 +1,19 @@
+.menu{
+  display: flex;
+  justify-content: center;
+  background-image: url('../../assets/image/bg_menu.png');
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: 627px 1024px;
+  margin-bottom: 120px;
+  .title{
+    padding-top: 153px;
+  }
+  .content{
+    padding-top: 103px;
+    width: 688px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
