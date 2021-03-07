@@ -7,13 +7,14 @@
 </template>
 
 <style lang="scss" module>
+@media only screen and (min-width: 768px) {
   .title{
     position: relative;
-    font-size: 64px;
+    font-size: 48px;
     font-family: Inter-ExtraBold, Inter;
     font-weight: 800;
     color: $color-text;
-    line-height: 77px;
+    line-height: 62px;
     display: flex;
     align-items: center;
     img:nth-child(1){
@@ -32,6 +33,36 @@
       left: -60px;
     }
   }
+}
+@media only screen and (max-width: 768px) {
+  .title{
+    position: relative;
+    font-size: 36px;
+    font-family: Inter-ExtraBold, Inter;
+    font-weight: 800;
+    color: $color-text;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    img:nth-child(1){
+      z-index: 1;
+      position: relative;
+      height: 65px;
+    }
+    div{
+      width: 300px;
+      z-index: 1;
+      position: relative;
+    }
+    img:nth-child(3){
+      position: absolute;
+      height: 35px;
+      left: -15px;
+      bottom: 0px;
+    }
+  }
+}
 </style>
 
 <script>

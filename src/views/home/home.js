@@ -2,9 +2,10 @@ import messages from './locale'
 import Title from '../../components/title/title.vue'
 import SubTitle from '../../components/title/subTitle.vue'
 import BalanceCard from '../../components/balanceCard/balanceCard.vue'
+import BalancePriceCard from '../../components/balanceCard/balancePriceCard.vue'
 import Space from '../../components/space/space.vue'
-import { homeRequestsInBatch } from '../../choco/batch'
-import { getBalanceNumber } from "../../utils/format";
+import { homeRequestsInBatch, getTotalValue } from '../../choco/batch'
+import { getBalanceNumber, getFunsWithThousand } from "../../utils/format";
 
 export default {
   name: 'Home',
@@ -13,6 +14,7 @@ export default {
     Title,
     SubTitle,
     BalanceCard,
+    BalancePriceCard,
     Space,
   },
   data() {
@@ -26,7 +28,15 @@ export default {
         number: 0,
         subNumber: 0,
       },
-      visible: true
+      totalValue: {
+        number: 0,
+        subNumber: 0,
+        lock: true,
+      },
+      vnlaPrice: {
+        number: 0,
+      },
+      visible: false
     }
   },
   methods: {
@@ -40,6 +50,15 @@ export default {
         ...this.totalSupplyContent,
         title: this.$t('60'),
         subTitle: this.$t('70'),
+      }
+      this.totalValue = {
+        ...this.totalValue,
+        title: this.$t('120'),
+        subTitle: this.$t('130'),
+      }
+      this.vnlaPrice = {
+        ...this.vnlaPrice,
+        title: this.$t('140'),
       }
     },
     handleClose(){
@@ -60,6 +79,14 @@ export default {
           }, 0)
           this.balanceContent.subNumber = getBalanceNumber(pedingReward)
         },
+      ])
+      getTotalValue([
+        (result) => {
+          this.totalValue.number = result
+        },
+        (result) => {
+          this.vnlaPrice.number = result
+        }
       ])
     }
   },

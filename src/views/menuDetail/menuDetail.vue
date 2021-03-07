@@ -5,14 +5,14 @@
     <div :class="$.content">
 
       <div :class="$.title">
-        <SubTitle :subTitle="`${$t('20')} ${type} LP ${$t('30')} `"/>
+        <SubTitle :subTitle="`${$t('20')} ${type} ${type !== 'VNLA' ? 'LP' : ''} ${$t('30')} `"/>
         <Space height="36"/>
-        <p>{{$t('40')}}</p>
+        <p>{{type !== 'VNLA' ? $t('40') : $t('110') }}</p>
         <Space height="36"/>
-        <p>{{`${type} LP ${$t('50')}`}}</p>
+        <a >{{`${type} LP ${$t('50')}`}}</a>
       </div>
 
-      <Space width="32"/>
+      <Space width="32" height="24"/>
 
       <div :class="$.card">
         <Space height="15"/>
@@ -28,7 +28,7 @@
         >{{$t('70')}}</el-button>
       </div>
 
-      <Space width="32"/>
+      <Space width="32" height="24"/>
 
       <div :class="$.card">
         <Space height="15"/>

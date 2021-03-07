@@ -11,7 +11,8 @@
 <template>
 <div :class="$style['card']">
   <Space height="24"/>
-  <img :class="$style['img']" :src="require(`../../assets/image/${content.title}.png`)"/>
+  <img :class="$style['img1']" :src="require(`../../assets/image/${content.img[0]}.png`)"/>
+  <img v-if="!!content.img[1]" :class="$style['img2']" :src="require(`../../assets/image/${content.img[1]}.png`)"/>
   <Space height="10"/>
   <p :class="$style['title']">{{content.title}}</p>
   <Space height="4"/>
@@ -19,12 +20,12 @@
   <Space height="19"/>
   <p :class="$style['btn']" @click="content.onTab(content)">{{$t('10')}}</p>
   <Space height="15"/>
-  <!-- <p :class="$style['gap']"></p> -->
-  <!-- <Space height="6"/>
+  <p :class="$style['gap']"></p>
+  <Space height="6"/>
   <div :class="$style['apy']">
     <span>APY</span>
     <span>{{content.apy}} %</span>
-  </div> -->
+  </div>
 </div>
 </template>
 
@@ -44,20 +45,27 @@ export default {
 <style lang="scss" module>
 .card{
   width: 328px;
-  height: 310px;
+  height: 324px;
   background: $color-10;
   border-radius: 24px;
   padding: 25px 24px;
   text-align: center;
   margin-bottom: 32px;
-  .img{
+  .img1{
     width: 65px;
+  }
+  .img2{
+    width: 65px;
+    position: relative;
+    left: -16px;
   }
   .title{
     font-family: $font-3;
+    font-size: 22px;
   }
   .sub-title{
     font-family: $font-3;
+    font-size: 14px;
     color: $color-text-grey-1;
     line-height: 23px;
   }
@@ -84,8 +92,16 @@ export default {
       color: $color-text-grey-1;
     }
     :nth-child(2){
-      font-family: $font-2;
+      font-family: $font-num;
       color: $color-text-blue;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card{
+    width: 100%;
+    .btn{
+      width: 100%;
     }
   }
 }

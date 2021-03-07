@@ -57,7 +57,6 @@ export const connect = async () => {
   try {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
   } catch(e) {
-    console.log(e);
   }
 }
 

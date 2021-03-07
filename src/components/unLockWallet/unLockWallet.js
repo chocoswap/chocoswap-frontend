@@ -8,7 +8,8 @@ export default {
     return {
       dialogVisible: false,
       metamaskDialogVisible: false,
-      funsBalance: "0.0000"
+      funsBalance: "0.0000",
+      showSet: false
     };
   },
   methods: {
@@ -25,7 +26,7 @@ export default {
       }
     },
     goEtherscan(){
-      window.open('https://etherscan.io/address/' + this.address)
+      window.open('https://scan.hecochain.com/address/' + this.address)
     },
     signOut() {
       const wallet = {
@@ -41,6 +42,9 @@ export default {
     onRefesh() {
       location.reload();
     },
+    showSetting() {
+      this.showSet = !this.showSet
+    }
   },
   computed: {
     address() {

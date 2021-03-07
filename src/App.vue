@@ -32,9 +32,15 @@
 .app-footer {
   position: absolute;
   bottom: 0;
-  z-index: 99;
+  // z-index: 99;
   width: 100%;
   height: $height-footer;
+}
+@media only screen and (max-width: 768px) {
+  .app-body {
+    padding-top: $height-header;
+    padding-bottom: $height-footer;
+  }
 }
 </style>
 <script>

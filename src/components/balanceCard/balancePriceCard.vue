@@ -1,13 +1,20 @@
 <template>
 <div :class="$style['card']">
-  <p :class="$style['title']">{{content.title}}</p>
+  <p :class="$style['title']">
+    <img src="../../assets/image/VNLA.png">
+    {{content.title}}
+    <span>
+      &nbsp;&nbsp;24h&nbsp;&nbsp;
+    </span>
+  </p>
   <p :class="$style['number']">
-    {{type === '$' ? '$' : ''}}<CountUp :endVal="content.number" :lock="content.lock" />
+    <span>$<CountUp :endVal="content.number" :lock="content.lock" /></span> 
+    <a href="" :class="$style['number-buy']">BUY</a>
   </p>
   <div :class="$style['sub-card']">
-    <p :class="$style['sub-title']">{{content.subTitle}}</p>
     <p :class="$style['sub-number']">
-      {{type === '$' ? '$' : ''}}<CountUp :endVal="content.subNumber" :lock="content.lock" /> {{type === '$' ? '' : 'VNLA'}}</p>
+      <!-- <CountUp :endVal="content.subNumber" :lock="content.lock" /> -->
+    </p>
   </div>
 </div>
 </template>
@@ -24,6 +31,14 @@
     .title{
       font-family: $font-1;
       color: $color-text-grey-1;
+      img{
+        width: 16px;
+      }
+      span{
+        border-radius: 8px;
+        background-color: #0E0E1A;
+        padding: 0 6px;
+      }
     }
     .number{
       font-size: 44px;
@@ -31,6 +46,21 @@
       color: $color-text-blue;
       line-height: 72px;
       border-bottom: 1px solid $color-20;
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      .number-buy{
+        display: inline-block;
+        width: 76px;
+        height: 34px;
+        border-radius: 8px;
+        border: 1px solid $color-text-blue;
+        font-size: 16px;
+        font-family: $font-1;
+        color: $color-text-blue;
+        text-align: center;
+        line-height: 34px;
+      }
     }
     .sub-card{
       display: flex;
@@ -59,6 +89,14 @@
     .title{
       font-family: $font-1;
       color: $color-text-grey-1;
+      img{
+        width: 16px;
+      }
+      span{
+        border-radius: 8px;
+        background-color: #0E0E1A;
+        padding: 0 6px;
+      }
     }
     .number{
       font-size: 44px;
@@ -66,6 +104,21 @@
       color: $color-text-blue;
       line-height: 72px;
       border-bottom: 1px solid $color-20;
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      .number-buy{
+        display: inline-block;
+        width: 76px;
+        height: 34px;
+        border-radius: 8px;
+        border: 1px solid $color-text-blue;
+        font-size: 16px;
+        font-family: $font-1;
+        color: $color-text-blue;
+        text-align: center;
+        line-height: 34px;
+      }
     }
     .sub-card{
       display: flex;

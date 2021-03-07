@@ -5,6 +5,17 @@
       @click="unlockWallet"
     >{{loginText}}</el-button>
 
+    <div v-show="showSet" :class="$['mobile-unlock-wallet']">
+      <div :class="$['address-btn']">
+        <div :class="$['address-text']" v-show="!!address">{{address}}</div>
+        <el-button
+          :class="$['mobile-btn']"
+          @click="unlockWallet"
+        >{{loginText}}</el-button>
+      </div>
+    </div>
+
+    <div :class="$['setting']" @click="showSetting"><i class="el-icon-setting"></i></div>
 
     <el-dialog
       width="400px"
@@ -27,7 +38,7 @@
       </a>
     </el-dialog>
 
-    <el-dialog width="400px" :title="$t('30')" :visible.sync="dialogVisible" :append-to-body="true">
+    <el-dialog :custom-class="$['el-dialog-wallet']" :title="$t('30')" :visible.sync="dialogVisible" :append-to-body="true">
       <div :class="$['my-wallet']">
         <img :class="$['img']" :src="require(`../../assets/image/VNLA.png`)"/>
         <p>{{funsBalance}}</p>

@@ -16,7 +16,7 @@
     font-weight: 700;
     padding-top: 26px;
     font-size: 44px;
-    font-family: $font-2;
+    font-family: $font-num;
     color: $color-text-blue;
     line-height: 53px;
     
@@ -32,5 +32,77 @@
   button{
     margin-left: 0 !important;
     margin-top: 24px;
+  }
+}
+.mobile-unlock-wallet {
+  display: none;
+}
+.setting {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .el-dialog-wallet {
+    width: 100% !important;
+    margin: 60% 0 0 0 !important;
+  }
+  .unlock-wallet {
+    .btn{
+      display: none;
+    }
+  }
+  .mobile-unlock-wallet{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 18px;
+    background-color: #23262E;
+    z-index: 1000;
+    .address-btn{
+      display: flex;
+      .address-text{
+        width: 126px;
+        height: 42px;
+        background: #13161C;
+        border-radius: 8px;
+        line-height: 42px;
+        margin-right: 2px;
+        padding: 0 10px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .mobile-btn{
+        border-radius: 8px !important;
+        color: $color-20;
+        width: 140px;
+      }
+    }
+  }
+  .setting{
+    position: fixed;
+    bottom: 18px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    background: #13161C;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .el-dialog-wallet {
+    width: 400px !important;
   }
 }

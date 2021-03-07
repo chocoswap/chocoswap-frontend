@@ -16,7 +16,7 @@ export const getDisplayBalance = (balance, decimals = 18) => {
     if (displayBalance.gt(0.001) || displayBalance.eq(0)) {
       return displayBalance.toPrecision(5)
     } else {
-      return displayBalance.toString()
+      return displayBalance.toFixed(8, 1)
     }
   } else {
     return useGroup(displayBalance.toFixed(4, 1))

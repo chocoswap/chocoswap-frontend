@@ -22,13 +22,14 @@
 </i18n>
 <template>
   <el-dialog
-    width="600px"
+    :custom-class="$style['el-dialog-deposit']"
     :title="`${unstake ? $t('text16') : $t('text12')} ${type} Tokens`"
     :visible="dialogVisible"
     :center="true"
-    :show-close="false"
+    :show-close="true"
     :before-close="onCancel"
   >
+
     <p :class="$style['available']">{{available}} {{type}} {{$t('text15')}}</p>
     <div :class="$style['input-amount']">
       <el-input v-model="input" :placeholder="$t('text14')"></el-input>
@@ -83,6 +84,20 @@ export default {
 };
 </script>
 <style lang="scss" module>
+
+
+@media only screen and (min-width: 768px) {
+  .el-dialog-deposit {
+    width: 600px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .el-dialog-deposit {
+    width: 100% !important;
+    margin: 110% 0 0 0 !important;
+  }
+}
 .available {
   text-align: right;
   font-family: $font-3;

@@ -56,7 +56,11 @@ export default {
     this.type = this.$route.params.type;
     Vue.nextTick(() => {
       this.getPresonInfo();
+      this.getRewardLPInterval()
     });
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
   },
   computed: {
     ...mapState({
@@ -72,7 +76,9 @@ export default {
       return this.type && require(`../../assets/image/${this.type.split('-')[0]}.png`);
     },
     stakingimg() {
-      return this.type && require(`../../assets/image/${this.type.split('-')[1]}.png`);
+      const titles = this.type.split('-')
+      const imgName = titles.length === 1 ? titles[0] : titles[1]
+      return this.type && require(`../../assets/image/${imgName}.png`);
     },
     isUnlock() {
       return !!this.address;
@@ -93,7 +99,7 @@ export default {
       if (!this.$store.state.wallet.address) {
         return
       }
-
+      
       menuDetailRequestsInBatch(pairs[this.type], [
         (err, result) => {
           this.deposit.available = getFullDisplayBalance(result);
@@ -196,5 +202,12 @@ export default {
     formatDisplay(num) {
       return getDisplayLP(num)
     },
+    getRewardLPInterval() {
+      this.timer = setInterval(() => {
+        getRewardLP(pairs[this.type].id).then(res => {
+          this.rewardsLp = getDisplayBalance(res);
+        });
+      }, 3000)
+    }
   }
 }
